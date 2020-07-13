@@ -24,7 +24,7 @@ class CarInterface(CarInterfaceBase):
     ret.carName = "toyota"
     ret.safetyModel = car.CarParams.SafetyModel.toyota
 
-    ret.steerActuatorDelay = 0.32  # Default delay, Prius has larger delay
+    ret.steerActuatorDelay = 0.12  # Default delay, Prius has larger delay
     ret.steerLimitTimer = 0.4
 
     if ret.enableGasInterceptor:
@@ -225,14 +225,11 @@ class CarInterface(CarInterfaceBase):
       stop_and_go = True
       ret.safetyParam = 73
       ret.wheelbase = 2.63906
-      ret.steerRatio = 15.9
-      tire_stiffness_factor = 0.950  # not optimized yet
+      ret.steerRatio = 13.9
+      tire_stiffness_factor = 0.444  # not optimized yet
       ret.mass = 3060. * CV.LB_TO_KG + STD_CARGO_KG
-      ret.lateralTuning.pid.kiBP = [0.0, 14.0, 26.0]
-      ret.lateralTuning.pid.kiV = [0.005, 0.015, 0.005]
-      ret.lateralTuning.pid.kpBP = [0.0, 14.0, 26.0]
-      ret.lateralTuning.pid.kpV = [0.13, 0.39, 0.13]
-      ret.lateralTuning.pid.kf = 0.00009
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.5], [0.1]]
+      ret.lateralTuning.pid.kf = 0.00007818594
 
     elif candidate in [CAR.LEXUS_ES_TSS2, CAR.LEXUS_ESH_TSS2]:
       stop_and_go = True
