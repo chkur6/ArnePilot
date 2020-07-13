@@ -224,9 +224,9 @@ class CarInterface(CarInterfaceBase):
     elif candidate in [CAR.COROLLA_TSS2, CAR.COROLLAH_TSS2]:
       stop_and_go = True
       ret.safetyParam = 73
-      ret.wheelbase = 2.63906
-      ret.steerRatio = 15.9
-      tire_stiffness_factor = 0.950  # not optimized yet
+      ret.wheelbase = 2.70
+      ret.steerRatio = 16.504807831724811
+      tire_stiffness_factor = 0.75203366964228469  # not optimized yet
       ret.mass = 3060. * CV.LB_TO_KG + STD_CARGO_KG
       ret.lateralTuning.pid.kiBP = [0.0, 14.0, 26.0]
       ret.lateralTuning.pid.kiV = [0.005, 0.015, 0.005]
